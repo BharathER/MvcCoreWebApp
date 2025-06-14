@@ -1,0 +1,64 @@
+﻿@model CoreWebMvc1stApp.Models.Employee
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<form asp-action="Update_click" class="form-horizontal" method="post">
+    <div class="form-group">
+        <label class="control-label col-md-2">Employee Name</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(Model => Model.Name)
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Employee Address</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(Model => Model.Address)
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Employee Salary</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(Model => Model.Salary)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+</form>
+
+@{
+    if (TempData["Msg"] != null)
+    {
+        <script>
+            alert('@TempData["Msg"]');
+            document.getElementById("t1").value = "";
+            document.getElementById("t2").value = "";
+            document.getElementById("t3").value = "";
+        </script>
+    }
+}
+
+
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Address</td>
+            <td>@Model.Salary</td>
+        </tr>
+    </tbody>
+</table> *@

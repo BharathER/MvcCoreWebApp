@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CoreWebMvc1stApp.Models.Employee>
+
+    <div>
+    @Html.ActionLink("Insert New Employee", "DBInsert", null, new { @class = "btn btn-primary" })
+    </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model){
+        <tr>
+                <td>@emp.Id</td>
+                <td>@emp.Name</td>
+                <td>@emp.Address</td>
+                <td>@emp.Salary</td>
+        </tr>
+        }
+    </tbody>
+</table>
